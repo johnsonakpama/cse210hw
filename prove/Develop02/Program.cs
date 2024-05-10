@@ -34,7 +34,7 @@ class Program
     {
         case 1:
 
-        //write journal Entry
+        write journal Entry
 
         string dateTime = GetDateTime();
 
@@ -58,7 +58,7 @@ class Program
 
         journal.Display();
 
-        // console.writeLine("success choice 2!");
+        console.writeLine("success choice 2!");
 
         break;
         
