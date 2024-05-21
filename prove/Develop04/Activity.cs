@@ -30,7 +30,7 @@ public class Activity
 
     public void showSpinner(int seconds)
     {
-        List<string> animinationString new List<string>();
+        List<string> animinationString = new List<string>();
         {
             animinationString.Add("|");
             animinationString.Add("/");
