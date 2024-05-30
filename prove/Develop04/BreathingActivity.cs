@@ -2,25 +2,47 @@ using System;
 
 public class BreathingActivity : Activity
 {
+     private string _massage1 = "Breathe in...";
+
+        private string _massage2 = "Now breathe out...";
+        private string _description = "This activity will help you relax by walking you through breathing in and out slowly. clear your mind and focus on breathing.";
     public BreathingActivity(string name, string description, int duration) : base (name, description, duration)
     {
-        // This activity will help you relax
-        _name = "BreathingActivty";
-        _description = "This activity will help you relax by walking you through breathing in and out slowly. clear your mind and focus on breathing.";
+        
     }
 
-    public void Run()
+     public void GetActivityDescription()
     {
-         StartMessage();
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(_duration);
-        while (DateTime.now() < endTime)
-        {
-            Console.Write(Breath in...);
-            Counter(5);
-            Console.Write(Breath out...);
-            Counter(5)
-        }
-        EndMassage();
+        Console.WriteLine(_description);
     }
+
+    public void Breathing(int seconds)
+    {
+        Console.WriteLine();  
+        int secondsTimer = 0;
+        while (secondsTimer < seconds)
+        {
+            Console.WriteLine();  
+            for (int i = 4; i > 0; i--)
+            {
+                Console.Write($"{_message1}{i}");
+                Thread.Sleep(1000);
+                string blank = new string('\b', (_message1.Length + 2));  
+                Console.Write(blank);
+                secondsTimer += 1;
+            }
+            Console.WriteLine($"{_message1}  ");  
+            for (int i = 5; i > 0; i--)
+            {
+                Console.Write($"{_message2}{i}");
+                Thread.Sleep(1000);
+                string blank = new string('\b', (_message2.Length + 2));  
+                Console.Write(blank);
+                secondsTimer += 1;
+            }
+            Console.WriteLine($"{_message2}  ");  
+        }
+    }
+
+    
 }

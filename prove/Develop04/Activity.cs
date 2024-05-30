@@ -18,9 +18,9 @@ public class Activity
         Console.WriteLine($"Welcome to the {_name} activity");
         Console.WriteLine(_description);
         Console.WriteLine("How long would you like to do this activity? ");
-        _duration = int.parse(Console.ReadLine());
+        _duration = int.Parse(Console.ReadLine());
         Console.WriteLine("Get ready...");
-        Spinner(5);
+        showSpinner(5);
     }
 
     public void DisplayEndingMassge()
@@ -48,26 +48,26 @@ public class Activity
 
             while(DateTime.Now < endTime)
             {
-                string s = animinationStrings[i];
+                string s = animinationString[i];
                 Console.Write(s);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
 
                 i++;
 
-                if (i >= animinationStrings.Count)
+                if (i >= animinationString.Count)
                 {
                     i = 0;
                 }
             }
 
-
+        }
 
         }
 
-     public void showCountDown(int seconds)
+     public void showCountDown()
         {
-            for (int i = duration; i > 0; i--)
+            for (int i = _duration; i > 0; i--)
             {
                 Console.Write(i);
                 Thread.Sleep(1000);
@@ -77,4 +77,3 @@ public class Activity
 
     }
     
-}
